@@ -1,0 +1,20 @@
+
+
+div > div.wp-playlist-tracks > div.wp-playlist-item > a > span.wp-playlist-item-artist {
+	text-transform: initial;
+}
+
+div > div.wp-playlist-tracks > div.wp-playlist-item > span.playlist-download-link {
+	cursor: grab;
+	position: absolute;
+	right: 3px;
+	top: 0;
+	font-size: 14px;
+	line-height: 1.5
+}
+
+
+div > div.wp-playlist-tracks > div.wp-playlist-item > div.wp-playlist-item-length {
+	position: absolute;
+	right: 1.5em;
+}
