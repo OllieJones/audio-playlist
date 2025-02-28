@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	const doDownload = event => {
 		event.preventDefault()
 		event.stopPropagation()
-		const dl = document.createElement('a')
-		dl.setAttribute('download', event.target.dataset.download)
-		dl.setAttribute('href', event.target.dataset.href)
-		dl.click()
+		const anchorElement = document.createElement('a')
+		anchorElement.setAttribute('download', event.target.dataset.download)
+		anchorElement.setAttribute('href', event.target.dataset.href)
+		anchorElement.click()
 	}
 
 	const annotateTracks = tracks => {
@@ -39,12 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			const url = track.getAttribute('href')
 			const namespan = track.querySelector('span.wp-playlist-item-title')
-			let name = ''
+			let name = []
 			if (album) {
-				name += album.innerText + ' '
+				name.push( album.innerText)
 			}
-			name += namespan.innerText
-			const nice = removeAccents(name)
+			if (track.firstChild
+				&& track.firstChild.nodeName === '#text'
+				&&  'string' === typeof track.firstChild.textContent
+				&& track.firstChild.textContent.match(/^\s*[0-9]+\.?\s*$/) ) {
+				name.push(track.firstChild.textContent.replace(/^\s*([0-9]+)\.?\s+$/, '$1').padStart(2, '0'))
+			}
+			name.push (namespan.innerText)
+			const nice = removeAccents(name.join(' '))
 				.replace(/[^A-Za-z0-9]+/g, '_')
 				.replace(/^_/, '')
 				.replace(/_$/, '')

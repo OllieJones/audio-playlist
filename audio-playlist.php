@@ -7,7 +7,7 @@
  * Author URI:      https://github.com/OllieJones/
  * Text Domain:     audio-playlist
  * Domain Path:     /languages
- * Version:         0.9.0
+ * Version:         0.9.1
  *
  * @package         Audio_Playlist
  */

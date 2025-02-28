@@ -4,7 +4,7 @@ Tags: audio, playlist, download
 Requires at least: 4.5
 Tested up to: 6.7.2
 Requires PHP: 5.6
-Stable tag: 0.9.0
+Stable tag: 0.9.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,14 +34,18 @@ Answer to foo bar dilemma.
 
 == Changelog ==
 
+= 0.9.1 =
+
+Add track number to download filename.
+
 = 0.9.0 =
 
 Initial debug.
 
 == Upgrade Notice ==
 
-= 0.9.0 =
+= 0.9.1 =
 
-Ready.
+Add track number.
 
 
